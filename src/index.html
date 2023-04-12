@@ -10,16 +10,17 @@
     <header>
       <form class="search-form" id="search-form">
         <input
+          class="search-input"
           type="text"
           name="searchQuery"
           autocomplete="off"
           placeholder="Search images..."
         />
-        <button type="submit">Search</button>
+        <button class="load-more" type="submit">Search</button>
       </form>
     </header>
     <div class="gallery"></div>
-    <button type="button" class="load-more js-load-more hide">Load more</button>
+    <button type="button" class="load-more js-load-more hide">more</button>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <script type="module" src="./index.js"></script>
   </body>

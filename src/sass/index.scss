@@ -1,6 +1,114 @@
-body {
-  max-width: 100%;
-}
 .hide {
   display: none;
+}
+.search-input {
+  height: 30px;
+  border-radius: 4px;
+}
+// .load-more {
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 1.5;
+//   letter-spacing: 0.04em;
+//   min-width: 65px;
+//   max-height: 40px;
+//   color: rgb(238, 252, 239);
+//   background: rgb(129, 141, 141, 0.2);
+//   cursor: pointer;
+//   border: none;
+//   padding: 8px 24px;
+//   border-radius: 34px;
+
+//   margin: 0 auto;
+//   gap: 16px;
+//   transition: background 250ms cubic-bezier(0.32, 0, 0.67, 0);
+//   text-align: center;
+// }
+// .load-more:hover {
+//   color: rgb(88, 90, 88);
+//   font-weight: bolder;
+// }
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+// Mixin below used to center the button.
+// If using in production,
+// remove the mixin and add position relative or absolute to button.
+
+@mixin center($extend: true) {
+  @if $extend {
+    @extend %center;
+  } @else {
+    position: sticky;
+    // margin-top: 35px;
+    margin-left: 50px;
+    // left: 50%;
+    // top: 0%;
+    transform: translateX(-20%) translateY(0%);
+  }
+}
+
+%center {
+  @include center($extend: false);
+}
+
+body {
+  max-width: 100%;
+  background: #fbfafa;
+}
+
+button {
+  @include center;
+  background: #333;
+  color: #ccc;
+  width: 100px;
+  height: 30px;
+  border: 0;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  transition: 0.6s;
+  overflow: hidden;
+  &:focus {
+    outline: 0;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover {
+    background: #338033;
+    cursor: pointer;
+    &:before {
+      transform: translateX(300px) skewX(-15deg);
+      opacity: 0.6;
+      transition: 0.7s;
+    }
+    &:after {
+      transform: translateX(300px) skewX(-15deg);
+      opacity: 1;
+      transition: 0.7s;
+    }
+  }
 }
