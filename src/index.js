@@ -26,9 +26,6 @@ function fetchImg(input, currentPage) {
   };
   const urlParams = new URLSearchParams(params);
   return axios.get(`https://pixabay.com/api/?${urlParams}`);
-  // //   return fetch(`https://pixabay.com/api/?${urlParams}`).then(response => {
-  // //     return response.json();
-  //   });
 }
 
 // форма страница карточка ==============
@@ -39,7 +36,7 @@ async function onFormSubmit(event) {
   try {
     const response = await fetchImg(input, currentPage);
     sectionRender.innerHTML = ``;
-
+    btnLoadMore.classList.add(`hide`);
     totalPages = Math.ceil(response.data.totalHits / 40);
     if (response.data.totalHits === 0) {
       Notiflix.Notify.failure(
