@@ -1,6 +1,7 @@
 // импорты ============
 import axios from 'axios';
 import Notiflix from 'notiflix';
+
 // переменные =========
 let input;
 let currentPage = 1;
@@ -59,23 +60,23 @@ function renderImgs(cards) {
   const markUp = cards
     .map(elem => {
       return `<div class="photo-card">
-        <img src="${elem.webformatURL}" alt="${elem.tags}" loading="lazy" />
+        <img src="${elem.webformatURL}" alt="${elem.tags}" loading="lazy" width=640/>
         <div class="info">
           <p class="info-item">
-            <b>Likes</b>
-            <span>${elem.likes}</span>
+            <b class="name-prop">Likes</b>
+            <span class="resp-prop">${elem.likes}</span>
           </p>
           <p class="info-item">
-            <b>Views</b>
-            <span>${elem.views}</span>
+            <b class="name-prop">Views</b>
+            <span class="resp-prop">${elem.views}</span>
           </p>
           <p class="info-item">
-            <b>Comments</b>
-            <span>${elem.comments}</span>
+            <b class="name-prop">Comments</b>
+            <span class="resp-prop">${elem.comments}</span>
           </p>
           <p class="info-item">
-            <b>Downloads</b>
-            <span>${elem.downloads}</span>
+            <b class="name-prop">Downloads</b>
+            <span class="resp-prop">${elem.downloads}</span>
           </p>
         </div>
       </div>`;
