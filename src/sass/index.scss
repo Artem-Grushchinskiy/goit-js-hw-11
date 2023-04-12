@@ -1,2 +1,6 @@
-@import './common';
-@import './example';
+body {
+  max-width: 100%;
+}
+.hide {
+  display: none;
+}
