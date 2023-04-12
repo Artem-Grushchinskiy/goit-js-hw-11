@@ -1,1 +1,0 @@
-{"mappings":"ACAA,oBAGA","sources":["index.79df0c80.css","src/sass/index.scss"],"sourcesContent":["body {\n  max-width: 100%;\n}\n\n.hide {\n  display: none;\n}\n\n/*# sourceMappingURL=index.79df0c80.css.map */\n","body {\n  max-width: 100%;\n}\n.hide {\n  display: none;\n}\n"],"names":[],"version":3,"file":"index.79df0c80.css.map"}
